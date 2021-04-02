@@ -120,6 +120,10 @@
               "devServerTarget": "role-based-authorization:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
