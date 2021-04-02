@@ -5,7 +5,27 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine"
-    ]
+    ],
+    "paths": {
+      "@env/*": [
+        "src/environments/*"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@models/*": [
+        "src/app/models/*"
+      ],
+      "@services/*": [
+        "src/app/services/*"
+      ],
+      "@helpers/*": [
+        "src/app/helpers/*"
+      ],
+      "@interfaces/*": [
+        "src/app/interfaces/*"
+      ]
+    }
   },
   "files": [
     "src/test.ts",

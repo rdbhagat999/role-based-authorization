@@ -1,0 +1,34 @@
+<main class="login-page text-center">
+
+  <form class="form-signin" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <img class="mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingInput" placeholder="joedoe"
+      formControlName="username" [ngClass]="{ 'is-invalid': submitted && f?.username?.errors, 'is-valid': !f?.username?.errors }">
+      <label for="floatingInput">Username address</label>
+      <div *ngIf="submitted && f?.username?.errors" class="invalid-feedback">
+        <div *ngIf="f?.username?.errors?.required">Username is required</div>
+      </div>
+    </div>
+
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+      formControlName="password" [ngClass]="{ 'is-invalid': submitted && f?.password?.errors, 'is-valid': !f?.password?.errors }">
+      <label for="floatingPassword">Password</label>
+      <div *ngIf="submitted && f?.password?.errors" class="invalid-feedback">
+        <div *ngIf="f?.password?.errors?.required">password is required</div>
+      </div>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p>
+      <code>
+        user:user, admin:admin
+      </code>
+    </p>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+  </form>
+
+</main>
