@@ -23,12 +23,12 @@ export class AuthService {
     localStorage.setItem(itemName, JSON.stringify(item));
   }
 
-  getLocalStorageItem(itemName: string): any {
-    const found = localStorage.getItem(itemName);
-    if (found) {
-      return JSON.parse(found);
+  getLocalStorageItem(itemName: string): any {    
+    try {
+      return JSON.parse(localStorage.getItem(itemName));
+    } catch(ex) {
+      return null;
     }
-    return null;
   }
 
   public get userValue(): User {
